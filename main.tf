@@ -33,3 +33,19 @@ resource "aws_subnet" "main" {
     }
 
 }
+ 
+# Since count = 3 creates three subnet instances, aws_subnet.main becomes a list and [0] is used to access the ID of the first subnet.
+output "aws_subnet_id_0" {
+  value = aws_subnet.main[0].id
+  
+}
+
+output "aws_subnet_id_1" {
+  value = aws_subnet.main[1].id
+  
+}
+
+output "aws_subnet_id_2" {
+  value = aws_subnet.main[2].id
+  
+}
